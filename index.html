@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Lilliput Research is an independent Ireland-based service for archival genealogy, family history and heir tracing.">
+<title>Lilliput Research — Genealogy &amp; Heir Tracing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Public+Sans:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+
+/* Layout: a registry ledger — narrow reading column, case-file cards set off on ruled "register" bands */
+:root {
+  --paper: #f5f7f4;
+  --sheet: #ffffff;
+  --ink: #16211e;
+  --muted: #56645f;
+  --rule: #d5ddd8;
+  --registry: #1f4d45;
+  --brass: #9a6b1f;
+  --on-registry: #f2f5f3;
+  --display: "Young Serif", Georgia, "Times New Roman", serif;
+  --body: "Public Sans", "Helvetica Neue", Arial, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0f1614; --sheet: #16201d; --ink: #e6ece9; --muted: #9aaba5; --rule: #2a3934;
+    --registry: #7fb8a9; --brass: #d9a95a; --on-registry: #0f1614; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0f1614; --sheet: #16201d; --ink: #e6ece9; --muted: #9aaba5; --rule: #2a3934;
+  --registry: #7fb8a9; --brass: #d9a95a; --on-registry: #0f1614; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--paper); color: var(--ink); font: 400 17px/1.65 var(--body); margin: 0; }
+.wrap { max-width: 1040px; margin: 0 auto; padding-inline: 20px; }
+a { color: var(--registry); }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--brass); outline-offset: 2px; }
+.draft { background: var(--brass); color: var(--sheet); font: 500 12px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; text-align: center; padding: 8px 16px; }
+header.top { border-bottom: 1px solid var(--rule); }
+header.top .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; padding-block: 18px; }
+.mark { font: 400 24px/1 var(--display); color: var(--ink); text-decoration: none; display: flex; align-items: baseline; gap: 10px; }
+.mark small { font: 500 11px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+nav { display: flex; flex-wrap: wrap; gap: 18px; font-size: 15px; }
+nav a { color: var(--muted); text-decoration: none; }
+nav a:hover { color: var(--ink); text-decoration: underline; }
+
+.hero .wrap { display: grid; grid-template-columns: 1.15fr .85fr; gap: 48px; padding-block: 64px 56px; align-items: center; }
+h1 { font: 400 clamp(36px, 5vw, 56px)/1.08 var(--display); margin: 0 0 20px; text-wrap: balance; letter-spacing: -.01em; }
+.lede { font-size: 19px; color: var(--muted); max-width: 34em; margin: 0 0 28px; }
+.cta { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn { display: inline-block; padding: 12px 20px; border-radius: 4px; font-weight: 600; text-decoration: none; font-size: 16px; }
+.btn.primary { background: var(--registry); color: var(--on-registry); }
+.btn.ghost { border: 1px solid var(--rule); color: var(--ink); background: var(--sheet); }
+
+/* the case-file card: the one object on the page given a frame */
+.casefile { background: var(--sheet); border: 1px solid var(--rule); border-top: 6px solid var(--registry); border-radius: 3px; padding: 22px 24px; box-shadow: 0 10px 30px -18px rgba(0,0,0,.35); }
+.casefile .label { font: 500 11px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--brass); margin: 0 0 14px; }
+.casefile dl { display: grid; grid-template-columns: auto 1fr; gap: 8px 16px; margin: 0; font-size: 15px; }
+.casefile dt { color: var(--muted); }
+.casefile dd { margin: 0; font-family: var(--mono); font-size: 14px; font-variant-numeric: tabular-nums; }
+.casefile .stamp { margin-top: 16px; padding-top: 14px; border-top: 1px dashed var(--rule); font-size: 14px; color: var(--muted); }
+.casefile .stamp b { color: var(--registry); }
+
+section.band { border-top: 1px solid var(--rule); }
+section.band .wrap { padding-block: 56px; }
+h2 { font: 400 32px/1.15 var(--display); margin: 0 0 12px; text-wrap: balance; }
+.kicker { font: 500 12px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--brass); margin: 0 0 12px; }
+.intro { color: var(--muted); max-width: 40em; margin: 0 0 32px; }
+
+.steps { list-style: none; padding: 0; margin: 0; display: grid; gap: 0; counter-reset: step; }
+.steps li { display: grid; grid-template-columns: 56px 1fr; gap: 16px; padding-block: 18px; border-bottom: 1px solid var(--rule); counter-increment: step; }
+.steps li::before { content: counter(step, decimal-leading-zero); font: 500 15px/1.6 var(--mono); color: var(--registry); }
+.steps h3 { margin: 0 0 4px; font-size: 18px; }
+.steps p { margin: 0; color: var(--muted); max-width: 46em; }
+
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+.fee { font: 400 44px/1 var(--display); color: var(--registry); margin: 6px 0 10px; }
+.checks { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+.checks li { padding-left: 28px; position: relative; }
+.checks li::before { content: ""; position: absolute; left: 0; top: .55em; width: 14px; height: 8px; border-left: 2px solid var(--registry); border-bottom: 2px solid var(--registry); transform: rotate(-45deg); }
+.registers { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0; border-top: 1px solid var(--rule); }
+.registers div { padding: 16px 16px 16px 0; border-bottom: 1px solid var(--rule); }
+.registers b { display: block; }
+.registers span { font-size: 15px; color: var(--muted); }
+.ph { font-family: var(--mono); font-size: .9em; background: color-mix(in srgb, var(--brass) 14%, transparent); padding: 0 4px; border-radius: 2px; }
+footer { border-top: 1px solid var(--rule); color: var(--muted); font-size: 14px; }
+footer .wrap { padding-block: 32px 48px; display: grid; gap: 8px; }
+@media (max-width: 760px) {
+  .hero .wrap, .grid2 { grid-template-columns: 1fr; gap: 32px; }
+  .hero .wrap { padding-block: 40px; }
+}
+@media (prefers-reduced-motion: no-preference) { .btn { transition: filter .15s; } .btn:hover { filter: brightness(1.08); } }
+
+/* Small adaptations to original Claude design */
+body { background:#f7f5ee; }
+header.top { background:#f7f5ee; }
+.casefile { background:#fffdf7; }
+.notice { font-size:13px; color:var(--muted); border-top:1px solid var(--rule); margin-top:22px; padding-top:15px; }
+footer a { color:inherit; }
+</style>
+</head>
+<body>
+<header class="top">
+ <div class="wrap">
+  <a class="mark" href="#top">Lilliput <small>Research</small></a>
+  <nav aria-label="Main navigation">
+   <a href="#approach">Our approach</a>
+   <a href="#how">Heir tracing</a>
+   <a href="#genuine">Received a letter?</a>
+   <a href="#contact">Contact</a>
+  </nav>
+ </div>
+</header>
+<main id="top">
+<section class="hero"><div class="wrap">
+ <div>
+  <p class="kicker">Independent archival &amp; genealogical research · Ireland</p>
+  <h1>We find the families that estates are waiting for.</h1>
+  <p class="lede">Lilliput Research traces family connections through original records, historical archives and probate notices. We investigate potential heirs to unclaimed estates and dormant assets across Ireland, Britain and continental Europe.</p>
+  <div class="cta">
+    <a class="btn primary" href="#genuine">I've received a letter</a>
+    <a class="btn ghost" href="#approach">Our research</a>
+  </div>
+ </div>
+ <aside class="casefile" aria-label="Illustration of an archival enquiry">
+  <p class="label">From the research register · illustrative example</p>
+  <dl>
+   <dt>Starting point</dt><dd>Published notice</dd>
+   <dt>Person</dt><dd>Identity to establish</dd>
+   <dt>Documents</dt><dd>Registers · probate</dd>
+   <dt>Family line</dt><dd>Evidence under review</dd>
+   <dt>Next step</dt><dd>Original record</dd>
+  </dl>
+  <p class="stamp">The question is simple; the proof seldom is. <b>Who was family, and where did the line lead?</b></p>
+ </aside>
+</div></section>
+<section class="band" id="approach"><div class="wrap grid2">
+ <div><p class="kicker">Historical research</p><h2>Documents before conclusions.</h2>
+  <p>Family names travel through languages, borders, marriages and generations. A promising surname is a beginning, not proof of a relationship.</p>
+  <p>We combine civil and parish registers, probate papers, historical newspapers, cemetery records and published family histories. Each connection is checked against its source, with gaps and contradictions kept visible.</p>
+ </div>
+ <div><p class="kicker">Areas of work</p>
+  <ul class="checks">
+   <li>Reconstructing families and identifying likely living branches</li>
+   <li>Tracing potential next of kin named in unclaimed-estate notices</li>
+   <li>Locating original records that can prove or disprove a connection</li>
+   <li>Preparing documented genealogical findings for independent professional review</li>
+  </ul>
+  <p class="notice">Research findings do not establish legal entitlement. Courts, estate administrators, banks and other relevant bodies determine eligibility under their own rules.</p>
+ </div>
+</div></section>
+<section class="band" id="how"><div class="wrap">
+ <p class="kicker">How a case progresses</p><h2>From a notice to a documented family line</h2>
+ <p class="intro">The process begins with an identifiable source, not a speculative promise of inheritance.</p>
+ <ol class="steps">
+  <li><div><h3>An official notice is identified</h3><p>For example, an intestate estate, a public call for heirs or a dormant-asset notice.</p></div></li>
+  <li><div><h3>Records are compared</h3><p>Names, dates, places and family relationships are tested against original or attributable archival evidence.</p></div></li>
+  <li><div><h3>A potential relative may be approached</h3><p>We explain the research enquiry without asking for a payment or banking credentials in the first letter.</p></div></li>
+  <li><div><h3>The recipient chooses what to do</h3><p>Any proposed research or success-based fee is explained in writing. Independent legal advice is welcome.</p></div></li>
+  <li><div><h3>Formal claims are independently assessed</h3><p>Where appropriate, documentary findings can be taken to the relevant authority or a qualified legal professional.</p></div></li>
+ </ol>
+</div></section>
+<section class="band" id="fees"><div class="wrap grid2">
+ <div><p class="kicker">Fees &amp; independence</p><h2>Clear terms, before any agreement.</h2>
+  <p>Where Lilliput initiates an enquiry into unclaimed assets, we do not seek an advance payment from a person contacted as a potential relative. Any proposed fee is disclosed in writing, subject to the rules of the relevant jurisdiction.</p>
+  <p>Separately commissioned historical or genealogical work is quoted individually.</p>
+ </div>
+ <div><p class="kicker">Our boundaries</p>
+  <ul class="checks">
+   <li>No release charges, tax requests or bank-detail requests in an initial letter</li>
+   <li>No guarantee of inheritance or claim success</li>
+   <li>No legal advice or representation by Lilliput Research</li>
+   <li>Independent verification of both the notice and the researcher is encouraged</li>
+  </ul>
+ </div>
+</div></section>
+<section class="band" id="genuine"><div class="wrap grid2">
+ <div><p class="kicker">Received a letter?</p><h2>How to check an enquiry is genuine</h2>
+  <p>If you receive an unexpected letter about a family connection, treat it as a research enquiry rather than proof that money is owed to you. A credible approach should be verifiable independently.</p>
+ </div>
+ <ul class="checks">
+  <li>Keep the letter reference and check the named researcher using a separately located contact route.</li>
+  <li>Ask what public notice or official record prompted the investigation.</li>
+  <li>Never send banking credentials or money to release an alleged inheritance.</li>
+  <li>Take independent legal advice before agreeing to any representation or fee.</li>
+ </ul>
+</div></section>
+<section class="band" id="where"><div class="wrap">
+ <p class="kicker">Our sources</p><h2>Registers we research</h2>
+ <div class="registers">
+  <div><b>Ireland</b><span>Probate and intestate-estate records</span></div>
+  <div><b>England &amp; Wales</b><span>Bona Vacantia lists and family records</span></div>
+  <div><b>Switzerland</b><span>Dormant-asset notices and cantonal archives</span></div>
+  <div><b>Austria</b><span>Court notices and civil registers</span></div>
+  <div><b>France &amp; Germany</b><span>Departmental, municipal and church archives</span></div>
+  <div><b>United States</b><span>Probate and unclaimed-property records</span></div>
+ </div>
+</div></section>
+<section class="band" id="contact"><div class="wrap grid2">
+ <div><p class="kicker">Correspondence</p><h2>Research enquiries</h2>
+  <p>Lilliput Research is based in Ireland and works with historical records across jurisdictions. If you have received a letter, retain its reference and use the correspondence details supplied to verify the enquiry.</p>
+ </div>
+ <div><p class="kicker">Contact information</p>
+  <p>Direct email enquiries will be available once the domain's dedicated mailbox has been configured.</p>
+  <p class="notice">Privacy: Enquiries may involve information about living people. We aim to limit personal data to what is relevant to a specific documented enquiry. You may seek information about or correction of data concerning you through the contact details in your correspondence. Please do not send identity documents unsolicited.</p>
+ </div>
+</div></section>
+</main>
+<footer><div class="wrap">
+ <span><strong>Lilliput Research</strong> · Independent genealogical and archival research · Ireland</span>
+ <span>Genealogical research is not legal advice, and potential kinship does not itself establish entitlement to an estate.</span>
+ <span>© 2026 Lilliput Research</span>
+</div></footer>
+</body>
+</html>
