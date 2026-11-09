@@ -1,0 +1,154 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Lilliput Research website and personal-data information.">
+<title>Privacy &amp; Data — Lilliput Research</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Public+Sans:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+
+/* Layout: a registry ledger — narrow reading column, case-file cards set off on ruled "register" bands */
+:root {
+  --paper: #f5f7f4;
+  --sheet: #ffffff;
+  --ink: #16211e;
+  --muted: #56645f;
+  --rule: #d5ddd8;
+  --registry: #1f4d45;
+  --brass: #9a6b1f;
+  --on-registry: #f2f5f3;
+  --display: "Young Serif", Georgia, "Times New Roman", serif;
+  --body: "Public Sans", "Helvetica Neue", Arial, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0f1614; --sheet: #16201d; --ink: #e6ece9; --muted: #9aaba5; --rule: #2a3934;
+    --registry: #7fb8a9; --brass: #d9a95a; --on-registry: #0f1614; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0f1614; --sheet: #16201d; --ink: #e6ece9; --muted: #9aaba5; --rule: #2a3934;
+  --registry: #7fb8a9; --brass: #d9a95a; --on-registry: #0f1614; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--paper); color: var(--ink); font: 400 17px/1.65 var(--body); margin: 0; }
+.wrap { max-width: 1040px; margin: 0 auto; padding-inline: 20px; }
+a { color: var(--registry); }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--brass); outline-offset: 2px; }
+.draft { background: var(--brass); color: var(--sheet); font: 500 12px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; text-align: center; padding: 8px 16px; }
+header.top { border-bottom: 1px solid var(--rule); }
+header.top .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; padding-block: 18px; }
+.mark { font: 400 24px/1 var(--display); color: var(--ink); text-decoration: none; display: flex; align-items: baseline; gap: 10px; }
+.mark small { font: 500 11px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+nav { display: flex; flex-wrap: wrap; gap: 18px; font-size: 15px; }
+nav a { color: var(--muted); text-decoration: none; }
+nav a:hover { color: var(--ink); text-decoration: underline; }
+
+.hero .wrap { display: grid; grid-template-columns: 1.15fr .85fr; gap: 48px; padding-block: 64px 56px; align-items: center; }
+h1 { font: 400 clamp(36px, 5vw, 56px)/1.08 var(--display); margin: 0 0 20px; text-wrap: balance; letter-spacing: -.01em; }
+.lede { font-size: 19px; color: var(--muted); max-width: 34em; margin: 0 0 28px; }
+.cta { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn { display: inline-block; padding: 12px 20px; border-radius: 4px; font-weight: 600; text-decoration: none; font-size: 16px; }
+.btn.primary { background: var(--registry); color: var(--on-registry); }
+.btn.ghost { border: 1px solid var(--rule); color: var(--ink); background: var(--sheet); }
+
+/* the case-file card: the one object on the page given a frame */
+.casefile { background: var(--sheet); border: 1px solid var(--rule); border-top: 6px solid var(--registry); border-radius: 3px; padding: 22px 24px; box-shadow: 0 10px 30px -18px rgba(0,0,0,.35); }
+.casefile .label { font: 500 11px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--brass); margin: 0 0 14px; }
+.casefile dl { display: grid; grid-template-columns: auto 1fr; gap: 8px 16px; margin: 0; font-size: 15px; }
+.casefile dt { color: var(--muted); }
+.casefile dd { margin: 0; font-family: var(--mono); font-size: 14px; font-variant-numeric: tabular-nums; }
+.casefile .stamp { margin-top: 16px; padding-top: 14px; border-top: 1px dashed var(--rule); font-size: 14px; color: var(--muted); }
+.casefile .stamp b { color: var(--registry); }
+
+section.band { border-top: 1px solid var(--rule); }
+section.band .wrap { padding-block: 56px; }
+h2 { font: 400 32px/1.15 var(--display); margin: 0 0 12px; text-wrap: balance; }
+.kicker { font: 500 12px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; color: var(--brass); margin: 0 0 12px; }
+.intro { color: var(--muted); max-width: 40em; margin: 0 0 32px; }
+
+.steps { list-style: none; padding: 0; margin: 0; display: grid; gap: 0; counter-reset: step; }
+.steps li { display: grid; grid-template-columns: 56px 1fr; gap: 16px; padding-block: 18px; border-bottom: 1px solid var(--rule); counter-increment: step; }
+.steps li::before { content: counter(step, decimal-leading-zero); font: 500 15px/1.6 var(--mono); color: var(--registry); }
+.steps h3 { margin: 0 0 4px; font-size: 18px; }
+.steps p { margin: 0; color: var(--muted); max-width: 46em; }
+
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+.fee { font: 400 44px/1 var(--display); color: var(--registry); margin: 6px 0 10px; }
+.checks { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+.checks li { padding-left: 28px; position: relative; }
+.checks li::before { content: ""; position: absolute; left: 0; top: .55em; width: 14px; height: 8px; border-left: 2px solid var(--registry); border-bottom: 2px solid var(--registry); transform: rotate(-45deg); }
+.registers { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0; border-top: 1px solid var(--rule); }
+.registers div { padding: 16px 16px 16px 0; border-bottom: 1px solid var(--rule); }
+.registers b { display: block; }
+.registers span { font-size: 15px; color: var(--muted); }
+.ph { font-family: var(--mono); font-size: .9em; background: color-mix(in srgb, var(--brass) 14%, transparent); padding: 0 4px; border-radius: 2px; }
+footer { border-top: 1px solid var(--rule); color: var(--muted); font-size: 14px; }
+footer .wrap { padding-block: 32px 48px; display: grid; gap: 8px; }
+@media (max-width: 760px) {
+  .hero .wrap, .grid2 { grid-template-columns: 1fr; gap: 32px; }
+  .hero .wrap { padding-block: 40px; }
+}
+@media (prefers-reduced-motion: no-preference) { .btn { transition: filter .15s; } .btn:hover { filter: brightness(1.08); } }
+
+/* Small adaptations to original Claude design */
+body { background:#f7f5ee; }
+header.top { background:#f7f5ee; }
+.casefile { background:#fffdf7; }
+.notice { font-size:13px; color:var(--muted); border-top:1px solid var(--rule); margin-top:22px; padding-top:15px; }
+footer a { color:inherit; }
+/* Additions to Claude's original ledger style */
+html { scroll-behavior:smooth; }
+:target { scroll-margin-top:25px; }
+nav { column-gap:16px; row-gap:7px; }
+a { text-underline-offset:3px; }
+.service-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; margin-top:28px; }
+.service-card { background:#fffdf7; border:1px solid var(--rule); padding:23px; }
+.service-card .service-num {font:400 30px/1 var(--display);color:var(--registry);}
+.service-card h3 {font:400 22px/1.25 var(--display);margin:15px 0 10px;}
+.service-card p {margin:0;font-size:15px;color:var(--muted);}
+.method-note {display:grid;grid-template-columns:1fr 2fr;gap:28px;border-top:1px solid var(--rule);margin-top:30px;padding-top:25px;}
+.method-note h3 {font:400 22px/1.2 var(--display);margin:0;}
+.method-note p:last-child {font-size:15px;margin:0;color:var(--muted);}
+.faq-list {border-top:1px solid var(--rule);margin-top:28px;}
+.faq-list details {border-bottom:1px solid var(--rule);}
+.faq-list summary {cursor:pointer;font-size:17px;font-weight:600;padding:18px 32px 18px 0;list-style:none;position:relative;}
+.faq-list summary::-webkit-details-marker {display:none;}
+.faq-list summary::after {content:"+";position:absolute;right:5px;top:18px;font:500 23px/1 var(--mono);color:var(--registry);}
+.faq-list details[open] summary::after {content:"−";}
+.faq-list p {color:var(--muted);margin:0 0 20px;max-width:48em;}
+.source-note {color:var(--muted);font-size:13px;max-width:56em;margin:26px 0 0;}
+.registers a {font-weight:600;}
+.contact-panel {background:#fffdf7;border:1px solid var(--rule);border-top:4px solid var(--registry);padding:22px 25px;align-self:start;}
+.contact-panel h3 {font:400 24px/1.25 var(--display);margin:0 0 11px;}
+.contact-panel p {font-size:15px;}
+footer a {text-underline-offset:3px;}
+@media(max-width:760px) {
+.service-grid,.method-note {grid-template-columns:1fr;}
+.method-note {gap:14px;}
+nav {font-size:14px;}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;}}
+
+.privacy-page{max-width:770px;margin:auto;padding:52px 20px 70px;}
+.privacy-page h2{font-size:26px;margin-top:35px;}
+.privacy-page p{line-height:1.7;}
+</style></head><body>
+<header class="top"><div class="wrap"><a class="mark" href="index.html">Lilliput <small>Research</small></a>
+<nav aria-label="Main navigation"><a href="index.html">Home</a><a href="index.html#contact">Correspondence</a></nav></div></header>
+<main class="privacy-page"><p class="kicker">Privacy &amp; personal data</p>
+<h1>Respecting the record — and the people in it.</h1>
+<p class="lede">This is a summary of website data and the principles relevant to archival investigations. It is not a substitute for a case-specific privacy notice.</p>
+<h2>Visitors to this website</h2>
+<p>The site is hosted as a static publication on GitHub Pages. It has no contact form, advertising tracker or first-party analytics. Hosting services may retain technical access or security logs. The typefaces are requested from Google Fonts, which means the browser may connect to Google to display them.</p>
+<h2>Genealogical investigations</h2>
+<p>Specific enquiries may involve personal information about living people, such as names, family relationships and references in probate documents, newspapers or civil records. A name match is not treated as proof of heirship. Processing of living-person information requires an appropriate lawful basis and proportionate use; case-specific disclosures and retention arrangements should be explained when applicable.</p>
+<h2>Requesting information or raising an objection</h2>
+<p>Individuals may have rights to access, correct, restrict, object to or request erasure of their information, subject to legal conditions and exceptions. If you received correspondence from Lilliput Research, use the return details and reference in that letter for privacy questions. A dedicated domain email is not yet operational.</p>
+<p>For independent guidance see the <a href="https://www.dataprotection.ie/en/individuals/know-your-rights/right-be-informed-transparency-article-13-14-gdpr" rel="noopener noreferrer">Irish Data Protection Commission's transparency guidance</a>.</p>
+<h2>Further information required before wider launch</h2>
+<p>This provisional summary needs to be supplemented with the confirmed identity and contact details of the data controller, applicable legal bases for processing, retention schedules, recipients and any international transfers. The information should reflect the practice's actual workflow.</p>
+<p class="notice">Last updated 9 November 2026. This website contains no confidential case files or published profiles of living claimants.</p>
+<p><a href="index.html">Return to homepage</a></p></main>
+<footer><div class="wrap"><span>Lilliput Research · Independent archival research · Ireland</span><span><a href="index.html#contact">Correspondence</a></span></div></footer>
+</body></html>

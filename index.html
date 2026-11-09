@@ -4,7 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<meta name="description" content="Lilliput Research is an independent Ireland-based service for archival genealogy, family history and heir tracing.">
+<meta name="description" content="Independent genealogical research and heir tracing in Ireland. Original records, documented family lines, probate notices and international archives.">
+<meta name="theme-color" content="#1f4d45">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Lilliput Research — Genealogy &amp; Heir Tracing">
 <title>Lilliput Research — Genealogy &amp; Heir Tracing</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -102,6 +105,38 @@ header.top { background:#f7f5ee; }
 .casefile { background:#fffdf7; }
 .notice { font-size:13px; color:var(--muted); border-top:1px solid var(--rule); margin-top:22px; padding-top:15px; }
 footer a { color:inherit; }
+/* Additions to Claude's original ledger style */
+html { scroll-behavior:smooth; }
+:target { scroll-margin-top:25px; }
+nav { column-gap:16px; row-gap:7px; }
+a { text-underline-offset:3px; }
+.service-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; margin-top:28px; }
+.service-card { background:#fffdf7; border:1px solid var(--rule); padding:23px; }
+.service-card .service-num {font:400 30px/1 var(--display);color:var(--registry);}
+.service-card h3 {font:400 22px/1.25 var(--display);margin:15px 0 10px;}
+.service-card p {margin:0;font-size:15px;color:var(--muted);}
+.method-note {display:grid;grid-template-columns:1fr 2fr;gap:28px;border-top:1px solid var(--rule);margin-top:30px;padding-top:25px;}
+.method-note h3 {font:400 22px/1.2 var(--display);margin:0;}
+.method-note p:last-child {font-size:15px;margin:0;color:var(--muted);}
+.faq-list {border-top:1px solid var(--rule);margin-top:28px;}
+.faq-list details {border-bottom:1px solid var(--rule);}
+.faq-list summary {cursor:pointer;font-size:17px;font-weight:600;padding:18px 32px 18px 0;list-style:none;position:relative;}
+.faq-list summary::-webkit-details-marker {display:none;}
+.faq-list summary::after {content:"+";position:absolute;right:5px;top:18px;font:500 23px/1 var(--mono);color:var(--registry);}
+.faq-list details[open] summary::after {content:"−";}
+.faq-list p {color:var(--muted);margin:0 0 20px;max-width:48em;}
+.source-note {color:var(--muted);font-size:13px;max-width:56em;margin:26px 0 0;}
+.registers a {font-weight:600;}
+.contact-panel {background:#fffdf7;border:1px solid var(--rule);border-top:4px solid var(--registry);padding:22px 25px;align-self:start;}
+.contact-panel h3 {font:400 24px/1.25 var(--display);margin:0 0 11px;}
+.contact-panel p {font-size:15px;}
+footer a {text-underline-offset:3px;}
+@media(max-width:760px) {
+.service-grid,.method-note {grid-template-columns:1fr;}
+.method-note {gap:14px;}
+nav {font-size:14px;}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;}}
 </style>
 </head>
 <body>
@@ -110,8 +145,10 @@ footer a { color:inherit; }
   <a class="mark" href="#top">Lilliput <small>Research</small></a>
   <nav aria-label="Main navigation">
    <a href="#approach">Our approach</a>
+   <a href="#services">Services</a>
    <a href="#how">Heir tracing</a>
    <a href="#genuine">Received a letter?</a>
+   <a href="#questions">Questions</a>
    <a href="#contact">Contact</a>
   </nav>
  </div>
@@ -124,7 +161,7 @@ footer a { color:inherit; }
   <p class="lede">Lilliput Research traces family connections through original records, historical archives and probate notices. We investigate potential heirs to unclaimed estates and dormant assets across Ireland, Britain and continental Europe.</p>
   <div class="cta">
     <a class="btn primary" href="#genuine">I've received a letter</a>
-    <a class="btn ghost" href="#approach">Our research</a>
+    <a class="btn ghost" href="#services">Our research</a>
   </div>
  </div>
  <aside class="casefile" aria-label="Illustration of an archival enquiry">
@@ -152,6 +189,23 @@ footer a { color:inherit; }
    <li>Preparing documented genealogical findings for independent professional review</li>
   </ul>
   <p class="notice">Research findings do not establish legal entitlement. Courts, estate administrators, banks and other relevant bodies determine eligibility under their own rules.</p>
+ </div>
+</div></section>
+<section class="band" id="services"><div class="wrap">
+ <p class="kicker">Research services</p>
+ <h2>Family history, patiently evidenced.</h2>
+ <p class="intro">A useful research report is not merely a long family tree. It explains what the records show, where accounts disagree, and what evidence is still needed.</p>
+ <div class="service-grid">
+  <article class="service-card"><span class="service-num">I</span><h3>Family reconstruction</h3>
+   <p>Tracing parents, marriages, siblings and descendants across civil and church registers, local archives and historical newspapers.</p></article>
+  <article class="service-card"><span class="service-num">II</span><h3>Heir &amp; estate tracing</h3>
+   <p>Investigating possible relatives connected to published probate notices, unclaimed estates and dormant assets, without presuming entitlement.</p></article>
+  <article class="service-card"><span class="service-num">III</span><h3>Original-record research</h3>
+   <p>Identifying particular certificates, register entries and archival references that can confirm or rule out an uncertain family connection.</p></article>
+ </div>
+ <div class="method-note">
+  <div><p class="kicker">Research output</p><h3>Evidence that can be checked</h3></div>
+  <p>Depending on the enquiry, a written research summary may include source citations, a documented family outline, competing interpretations and specific records still to obtain. Formal claims and legal assessments remain the responsibility of the relevant authorities or qualified professionals.</p>
  </div>
 </div></section>
 <section class="band" id="how"><div class="wrap">
@@ -190,30 +244,52 @@ footer a { color:inherit; }
   <li>Take independent legal advice before agreeing to any representation or fee.</li>
  </ul>
 </div></section>
+<section class="band" id="questions"><div class="wrap">
+ <p class="kicker">Frequently asked questions</p><h2>Questions worth asking.</h2>
+ <div class="faq-list">
+  <details><summary>Does being contacted mean I am entitled to money?</summary>
+  <p>No. It means a possible family connection has been identified for investigation. A letter is not proof of legal heirship, a promise of payment or an official award.</p></details>
+  <details><summary>Can I approach the estate authority myself?</summary>
+  <p>Often, yes. Rules differ by jurisdiction and the particular type of property. For England and Wales, the <a href="https://www.gov.uk/unclaimed-estates-bona-vacantia" rel="noopener noreferrer">Government Legal Department explains how relatives may claim directly</a>.</p></details>
+  <details><summary>What would I pay?</summary>
+  <p>We do not request an upfront release payment in an enquiry initiated by Lilliput. Any proposed success-based fee must be explained in a written agreement before you decide. Independently commissioned historical research is quoted according to scope. No universal percentage is advertised.</p></details>
+  <details><summary>Why are distant relatives and name changes relevant?</summary>
+  <p>Families are reconstructed through generations, marriage names, migration and local spelling variants. A plausible name match is a lead, not a confirmed relationship.</p></details>
+  <details><summary>Do I need to send documents or bank details immediately?</summary>
+  <p>No. Do not send passport copies, bank credentials or payments in response to an unexpected first letter. Verify the researcher and source independently before sharing sensitive material.</p></details>
+  <details><summary>Can I ask not to be contacted again?</summary>
+  <p>Use the correspondence details on your letter to express your preference. You may also raise questions or exercise applicable personal-data rights, subject to relevant legal exceptions.</p></details>
+ </div>
+</div></section>
 <section class="band" id="where"><div class="wrap">
  <p class="kicker">Our sources</p><h2>Registers we research</h2>
  <div class="registers">
   <div><b>Ireland</b><span>Probate and intestate-estate records</span></div>
-  <div><b>England &amp; Wales</b><span>Bona Vacantia lists and family records</span></div>
-  <div><b>Switzerland</b><span>Dormant-asset notices and cantonal archives</span></div>
-  <div><b>Austria</b><span>Court notices and civil registers</span></div>
+  <div><b>England &amp; Wales</b><span><a href="https://www.gov.uk/government/statistical-data-sets/unclaimed-estates-list" rel="noopener noreferrer">Official Bona Vacantia list</a> and probate records</span></div>
+  <div><b>Switzerland</b><span><a href="https://www.dormantaccounts.ch/narilo/" rel="noopener noreferrer">Published dormant-asset notices</a> and cantonal archives</span></div>
+  <div><b>Austria</b><span><a href="https://edikte.justiz.gv.at/" rel="noopener noreferrer">Official Ediktsdatei notices</a> and civil registers</span></div>
   <div><b>France &amp; Germany</b><span>Departmental, municipal and church archives</span></div>
   <div><b>United States</b><span>Probate and unclaimed-property records</span></div>
  </div>
+ <p class="source-note">These links lead to independent official registers. Lilliput Research is not affiliated with the authorities, courts, archives or banks mentioned here.</p>
 </div></section>
 <section class="band" id="contact"><div class="wrap grid2">
- <div><p class="kicker">Correspondence</p><h2>Research enquiries</h2>
-  <p>Lilliput Research is based in Ireland and works with historical records across jurisdictions. If you have received a letter, retain its reference and use the correspondence details supplied to verify the enquiry.</p>
+ <div><p class="kicker">Correspondence</p><h2>Make an enquiry.</h2>
+  <p>If you received a letter from Lilliput Research, please retain its reference and use the return details supplied in that letter. Before sharing personal information, you can independently check the underlying public notice.</p>
+  <p>For new research enquiries, a useful brief includes the names, places and approximate dates already known, the particular question to be resolved and any source references available.</p>
  </div>
- <div><p class="kicker">Contact information</p>
-  <p>Direct email enquiries will be available once the domain's dedicated mailbox has been configured.</p>
-  <p class="notice">Privacy: Enquiries may involve information about living people. We aim to limit personal data to what is relevant to a specific documented enquiry. You may seek information about or correction of data concerning you through the contact details in your correspondence. Please do not send identity documents unsolicited.</p>
+ <div class="contact-panel"><p class="kicker">Contact details</p>
+  <h3>Dedicated email being arranged</h3>
+  <p>The website is active, but a business mailbox has not yet been configured. Until then, recipients can use the verified correspondence details supplied in their letter. We do not publish an untested email address.</p>
+  <p class="notice">Please do not send identity documents, financial details or personal records about living relatives through an unverified channel.</p>
+  <p><a href="privacy.html">Privacy and personal data</a></p>
  </div>
 </div></section>
 </main>
 <footer><div class="wrap">
  <span><strong>Lilliput Research</strong> · Independent genealogical and archival research · Ireland</span>
  <span>Genealogical research is not legal advice, and potential kinship does not itself establish entitlement to an estate.</span>
+ <span><a href="#questions">Questions</a> · <a href="privacy.html">Privacy &amp; data</a> · <a href="#contact">Correspondence</a></span>
  <span>© 2026 Lilliput Research</span>
 </div></footer>
 </body>
