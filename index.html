@@ -137,6 +137,180 @@ footer a {text-underline-offset:3px;}
 nav {font-size:14px;}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;}}
+
+/* PHI EDITORIAL PASS — Lilliput's bookish architectural vocabulary, 9 Nov 2026
+   Scale: 13 / 21 / 34 / 55 / 89. Curves are quiet rather than decorative spectacle. */
+:root {
+  --space-1:13px;
+  --space-2:21px;
+  --space-3:34px;
+  --space-4:55px;
+  --space-5:89px;
+  --warm-sheet:#fffdf7;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]){--warm-sheet:#1d2824;}
+}
+:root[data-theme="dark"] {--warm-sheet:#1d2824;}
+body { line-height:1.69; letter-spacing:.002em; }
+.wrap { max-width:1120px; padding-inline:clamp(21px,3.25vw,34px); }
+header.top .wrap { padding-block:21px; }
+header.top { position:relative; }
+header.top::after {
+  content:""; position:absolute; right:0; bottom:-1px;
+  width:min(34vw,233px); height:1px;
+  background:linear-gradient(90deg,transparent,var(--brass));
+  opacity:.36;
+}
+.mark { gap:13px; }
+.mark small { letter-spacing:.17em; }
+nav { gap:8px 21px; font-size:14px; align-items:center; }
+nav a { text-underline-offset:4px; }
+.hero { position:relative; isolation:isolate; }
+.hero .wrap {
+  grid-template-columns:minmax(0,1.618fr) minmax(280px,1fr);
+  gap:clamp(34px,5vw,55px);
+  padding-block:clamp(68px,7vw,89px) 68px;
+  align-items:center;
+}
+.hero .lede { max-width:35ch; line-height:1.73; }
+h1 {
+  font-size:clamp(42px,4.7vw,64px);
+  line-height:1.12;
+  max-width:14.6ch;
+  letter-spacing:-.021em;
+  margin-bottom:21px;
+}
+h2 { line-height:1.2; letter-spacing:-.01em; }
+.hero .kicker { margin-bottom:21px; }
+.cta { gap:13px; }
+.btn {
+  padding:12px 21px;
+  border-radius:3px 13px 3px 13px;
+  transition:background .17s ease, transform .17s ease;
+}
+.btn:hover { transform:translateY(-1px); }
+.btn.ghost { background:transparent; border-color:var(--rule); }
+.btn.ghost:hover { background:var(--warm-sheet); }
+.casefile {
+  border-radius:2px 21px 2px 13px;
+  border-top-width:4px;
+  border-top-color:var(--registry);
+  padding:34px 34px 66px;
+  position:relative;
+  overflow:hidden;
+  transform:rotate(-.27deg);
+  box-shadow:13px 17px 28px -27px rgba(0,0,0,.52);
+  background:var(--warm-sheet);
+}
+.casefile::before {
+  content:"";
+  position:absolute; width:89px; height:89px; top:-52px; right:-45px;
+  border:1px solid var(--brass); border-radius:50%; opacity:.38;
+  pointer-events:none;
+}
+.casefile .label { margin-bottom:21px; line-height:1.6; }
+.casefile dl { grid-template-columns:minmax(84px,.69fr) minmax(0,1fr); gap:13px 13px; }
+.casefile dd { overflow-wrap:anywhere; }
+.casefile .stamp { padding-top:21px; margin-top:21px; max-width:38ch; }
+.casefile-geometry {
+  position:absolute; width:144px; height:69px;
+  right:13px; bottom:-13px; color:var(--registry); opacity:.26;
+  transform:rotate(.3deg);
+  pointer-events:none; user-select:none;
+}
+.casefile-geometry svg { display:block; height:100%; width:100%; }
+section.band { position:relative; }
+section.band::before {
+  content:""; position:absolute; top:-1px;
+  left:max(21px,calc((100vw - 1120px)/2 + 34px));
+  width:89px; height:1px;
+  background:var(--brass);
+  opacity:.46;
+}
+section.band .wrap { padding-block:clamp(55px,6vw,89px); }
+section.band:nth-of-type(3n) .wrap { padding-block:55px 68px; }
+h2 { max-width:20ch; margin-bottom:21px; }
+.intro { max-width:54ch; }
+.kicker { letter-spacing:.16em; }
+.grid2 { grid-template-columns:minmax(0,1fr) minmax(0,1.15fr); gap:clamp(34px,5vw,55px); }
+.service-grid { grid-template-columns:1.06fr 1fr 1.06fr; gap:21px; margin-top:34px; align-items:stretch; }
+.service-card {
+  border-radius:2px 13px 2px 8px;
+  background:var(--warm-sheet);
+  padding:34px 21px 34px;
+  box-shadow:0 17px 30px -32px rgba(0,0,0,.55);
+}
+.service-card:nth-child(2) { transform:translateY(13px); border-top:2px solid var(--brass); }
+.service-card:nth-child(3) { transform:translateY(5px); }
+.service-card .service-num { font-size:34px; }
+.service-card h3 { margin:21px 0 13px; }
+.method-note { grid-template-columns:minmax(0,1fr) minmax(0,1.618fr); margin-top:55px; padding-top:34px; gap:34px; }
+.method-note > div { position:relative; }
+.method-note > div::after {
+  content:""; display:block;
+  width:34px; height:34px; margin:21px 0 0 1px;
+  border-left:1px solid var(--brass); border-bottom:1px solid var(--brass);
+  border-radius:0 0 0 34px; opacity:.65;
+}
+.steps li { grid-template-columns:55px 1fr; gap:21px; padding-block:21px; }
+.steps li::before { opacity:.74; font-size:14px; }
+#questions .faq-list { max-width:790px; margin-top:34px; }
+.faq-list summary { padding-block:21px; }
+.faq-list summary::after { top:21px; }
+.registers { grid-template-columns:repeat(3,minmax(0,1fr)); gap:0 21px; }
+.registers div { padding-block:21px; }
+.contact-panel {
+  border-radius:2px 13px 2px 13px;
+  background:var(--warm-sheet);
+  padding:34px;
+  box-shadow:13px 17px 27px -32px rgba(0,0,0,.5);
+}
+footer .wrap { padding-block:34px 55px; gap:13px; }
+@media(max-width:850px) {
+  .hero .wrap { grid-template-columns:minmax(0,1.3fr) minmax(230px,1fr); gap:34px; }
+  .casefile { padding:21px 21px 55px; }
+  .service-grid { gap:13px; }
+  .registers { grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+@media(max-width:760px) {
+ .wrap { padding-inline:21px; }
+ .hero .wrap,.grid2,.service-grid,.method-note { grid-template-columns:minmax(0,1fr); }
+ .hero .wrap { padding-block:55px 55px; gap:34px; }
+ h1 { max-width:14ch; font-size:clamp(37px,9vw,55px); }
+ .hero .lede { max-width:50ch; }
+ .casefile { max-width:520px; transform:none; }
+ section.band .wrap,section.band:nth-of-type(3n) .wrap { padding-block:55px; }
+ .service-card:nth-child(2),.service-card:nth-child(3) { transform:none; }
+ .service-card { padding:25px 21px; }
+ .method-note { gap:21px; margin-top:34px; }
+ .registers { grid-template-columns:repeat(2,minmax(0,1fr)); }
+ nav { gap:8px 16px; }
+ .contact-panel { padding:25px; }
+}
+
+/* A printer's curved flourish, reserved for two chapter headings. */
+#services h2::after, #questions h2::after {
+ content:""; display:block;
+ width:89px; height:8px; margin-top:13px;
+ border-bottom:1px solid var(--brass);
+ border-radius:0 0 89px 13px;
+ opacity:.58;
+}
+@media(max-width:760px) {
+  .hero .btn {font-size:15px;padding:11px 16px;}
+}
+@media(max-width:450px) {
+  .hero .wrap { padding-block:55px 34px; }
+  .registers { grid-template-columns:1fr; }
+  .casefile dl { grid-template-columns:minmax(80px,.75fr) minmax(0,1fr); }
+  .casefile .label { padding-right:45px; }
+  .casefile-geometry { width:110px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .btn { transition:none; }
+  .btn:hover { transform:none; }
+}
 </style>
 </head>
 <body>
@@ -174,6 +348,14 @@ nav {font-size:14px;}
    <dt>Next step</dt><dd>Original record</dd>
   </dl>
   <p class="stamp">The question is simple; the proof seldom is. <b>Who was family, and where did the line lead?</b></p>
+ <div class="casefile-geometry" aria-hidden="true">
+  <svg viewBox="0 0 144 69" fill="none" stroke="currentColor" stroke-width=".9" stroke-linejoin="round">
+   <path d="M8 51 27 41 46 51 27 61Z M8 51V37L27 27 46 37V51 M27 61V47 M27 27V41 M46 37 27 47 8 37"/>
+   <path d="M46 37 65 27 84 37 65 47Z M46 37V23L65 13 84 23V37 M65 47V33 M65 13V27 M84 23 65 33 46 23"/>
+   <path d="M84 51 103 41 122 51 103 61Z M84 51V37L103 27 122 37V51 M103 61V47 M103 27V41 M122 37 103 47 84 37"/>
+   <path d="M46 51 65 61 84 51 M65 47V61" stroke-dasharray="2 4"/>
+  </svg>
+ </div>
  </aside>
 </div></section>
 <section class="band" id="approach"><div class="wrap grid2">
