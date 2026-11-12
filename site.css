@@ -183,3 +183,10 @@ footer .shell{align-items:start}
 
 /* Plain privacy text, not a promotional card */
 .privacy-note{font-size:12px!important;border-top:1px solid var(--line);padding-top:21px;margin-top:34px;color:var(--soft)}
+
+/* Keep service and fees headings readable on narrow phones. */
+@media(max-width:600px) {
+ .letter-block{grid-template-columns:minmax(0,1fr)}
+ .letter-block h2{font-size:clamp(33px,9vw,42px);overflow-wrap:break-word}
+ .letter-block>div{min-width:0}
+}
