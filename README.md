@@ -34,7 +34,7 @@ Remaining launch work: configure and test a business mailbox; verify Irish busin
 
 ## 12 November 2026 — founder's fee/privacy decisions
 - The introductory letter and brief explanation are free.
-- Proposed standard heir-tracing success fee: 5% of money actually recovered under a signed agreement; no percentage fee without recovery; third-party expenses require advance agreement.
+- Public website does not quote a standard percentage; any fees for further work are agreed privately in writing before engagement. Introductory letters remain free.
 - Solicitor review is planned before finalising terms; never imply a solicitor is retained by the practice.
 - CRO business-name registration has been deliberately deferred until after Intreo/welfare guidance; do not claim registration or show a number.
 - Broader source descriptions cover family trees, newspapers, old house/household registers, local history, civil/parish records, wills, probate records and archives without publishing investigative case specifics.
