@@ -190,3 +190,20 @@ footer .shell{align-items:start}
  .letter-block h2{font-size:clamp(33px,9vw,42px);overflow-wrap:break-word}
  .letter-block>div{min-width:0}
 }
+
+
+/* One quiet map-and-folio engraving detail, used only on Research.
+   Keep it subordinate to the actual documents and away from trust/fee pages. */
+.research-intro .folio-ornament {
+ position:absolute;
+ right:16px;
+ top:46px;
+ width:160px;
+ height:auto;
+ opacity:.23;
+ pointer-events:none;
+ user-select:none;
+}
+@media (max-width:1000px) {
+ .research-intro .folio-ornament {display:none}
+}
