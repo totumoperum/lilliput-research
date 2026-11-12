@@ -31,3 +31,12 @@ Style: The two-line LILLIPUT / RESEARCH masthead draws from the approved archiva
 - HTTPS domain certificate re-provisioned and HTTPS enforcement enabled on GitHub Pages.
 
 Remaining launch work: configure and test a business mailbox; verify Irish business-name registration and the business's privacy arrangements; obtain professional review of client terms and any international-asset claims. The site is intentionally noindex until ready.
+
+## 12 November 2026 — founder's fee/privacy decisions
+- The introductory letter and brief explanation are free.
+- Proposed standard heir-tracing success fee: 5% of money actually recovered under a signed agreement; no percentage fee without recovery; third-party expenses require advance agreement.
+- Solicitor review is planned before finalising terms; never imply a solicitor is retained by the practice.
+- CRO business-name registration has been deliberately deferred until after Intreo/welfare guidance; do not claim registration or show a number.
+- Broader source descriptions cover family trees, newspapers, old house/household registers, local history, civil/parish records, wills, probate records and archives without publishing investigative case specifics.
+- Public privacy page now explains case-linked personal information and the potential role of cloud, OCR and AI providers, but identifies incomplete legal-basis, transfer and retention assessments.
+- Detailed PRIVATE solicitor handoff is held on Mint outside this public repository: /home/mint/LILLIPUT_PRIVACY_FEE_SOLICITOR_REVIEW_2026-11-12.md
