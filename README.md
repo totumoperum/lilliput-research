@@ -20,3 +20,14 @@ Style: The two-line LILLIPUT / RESEARCH masthead draws from the approved archiva
 - Confirm the business name registration and legal details. Do not invent a CRO number.
 - Ensure the GitHub Pages HTTPS certificate is issued and enforced.
 - Remove noindex and robots Disallow only when the above items have been addressed.
+
+
+## 12 November 2026 — practical heir-tracing site structure
+- Clear routes for families receiving a letter and for solicitors, executors and estate administrators.
+- New independent verification, professional research, transparent fees and physical contact pages.
+- The Lilliput Press address used as a c/o postal address, making clear the publishing company is not involved.
+- No invented accreditations, solicitor association, case-specific claims, false fees or client testimonials.
+- Real archival images, poster-inspired typography and original site design retained.
+- HTTPS domain certificate re-provisioned and HTTPS enforcement enabled on GitHub Pages.
+
+Remaining launch work: configure and test a business mailbox; verify Irish business-name registration and the business's privacy arrangements; obtain professional review of client terms and any international-asset claims. The site is intentionally noindex until ready.

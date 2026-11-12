@@ -128,3 +128,55 @@ nav{gap:13px 19px}
 }
 @media(max-width:380px){.hero-title{font-size:61px}.document-mosaic{grid-template-rows:225px 210px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.doc img{transition:none}}
+
+/* Practical routes borrowed from established probate-genealogy user journeys,
+   with original Lilliput editorial presentation and no third-party branding. */
+.skip-link{position:absolute;left:21px;top:-110px;background:var(--ink);color:white;padding:10px 16px;z-index:20}
+.skip-link:focus{top:12px}
+.hero-choices,.page-actions{display:flex;gap:13px;flex-wrap:wrap;align-items:center;margin-top:29px}
+.choice-primary,.choice-secondary{display:inline-flex;align-items:center;justify-content:space-between;gap:22px;
+padding:15px 21px;font:500 12px/1.45 var(--body);text-decoration:none;letter-spacing:.01em;
+border:1px solid var(--ink);border-radius:2px 13px 2px 8px;min-height:50px;transition:background .17s ease}
+.choice-primary{background:var(--ink);color:var(--paper)}
+.choice-secondary{color:var(--ink);background:rgba(247,243,233,.72);border-color:var(--line)}
+.choice-primary:hover{background:#305047}
+.choice-secondary:hover{background:var(--white)}
+.choice-primary span,.choice-secondary span{font:500 17px var(--mono)}
+.audience-band{padding:55px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.audience-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:34px}
+.audience-route{position:relative;text-decoration:none;display:flex;flex-direction:column;align-items:flex-start;
+padding:24px 38px 34px 0;border-top:1px solid var(--brass)}
+.audience-route strong{display:block;font:500 clamp(34px,3.3vw,47px)/1.05 var(--display);letter-spacing:-.02em;margin:11px 0 15px}
+.audience-route>span:not(.eyebrow){font-size:13px;color:var(--soft);max-width:360px}
+.audience-route b{font:400 24px var(--mono);position:absolute;right:15px;top:26px;color:var(--brass)}
+.audience-route:hover strong{text-decoration:underline;text-decoration-color:var(--brass);text-decoration-thickness:1px;text-underline-offset:7px}
+.assurance-band{border-bottom:1px solid var(--line);padding:20px 0}
+.assurance-band .shell{display:flex;flex-wrap:wrap;gap:13px 34px;justify-content:space-between}
+.assurance-band span{font:500 10px/1.6 var(--mono);letter-spacing:.02em;color:var(--soft)}
+.page-actions{margin-top:34px}
+.trust-strip{padding-top:15px}
+.postal-address{font:500 clamp(28px,3vw,40px)/1.25 var(--display);font-style:normal;letter-spacing:-.005em}
+.postal-address strong{font-weight:600}
+.contact-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:89px}
+.contact-note{font:400 12px/1.7 var(--body);color:var(--soft);margin-top:34px;max-width:400px}
+.contact-heading{font:500 44px/1.1 var(--display);margin:0 0 21px}
+.contact-grid p{color:var(--soft)}
+.professional-list{padding-left:22px;margin:0 0 25px;color:var(--soft)}
+.professional-list li{padding:0 0 15px 2px}
+.footer-small{font-size:11px;line-height:1.7;max-width:345px;margin:16px 0 0;color:var(--soft)}
+footer .footbrand{text-decoration:none}
+footer .shell{align-items:start}
+.eyebrow{line-height:1.65}
+@media(max-width:850px){.contact-grid{gap:34px}}
+@media(max-width:620px){
+ .hero-choices,.page-actions{align-items:stretch}
+ .hero-choices .choice-primary,.hero-choices .choice-secondary{width:100%}
+ .audience-grid,.contact-grid{grid-template-columns:1fr;gap:21px}
+ .audience-band{padding:34px 0}
+ .audience-route{padding:21px 34px 25px 0}
+ .assurance-band .shell{display:block}
+ .assurance-band span{display:block;margin-bottom:9px}
+ .contact-heading{font-size:38px}
+ .page-actions .choice-primary,.page-actions .choice-secondary{width:100%}
+}
+@media(prefers-reduced-motion:reduce){.choice-primary,.choice-secondary{transition:none}}
