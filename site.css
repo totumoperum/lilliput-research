@@ -207,3 +207,83 @@ footer .shell{align-items:start}
 @media (max-width:1000px) {
  .research-intro .folio-ornament {display:none}
 }
+
+/* Mobile navigation: keep the elegant single-line masthead, give every link a real touch target.
+   Native details/summary works without scripts or site cookies. */
+.mobile-nav{display:none}
+@media(max-width:850px){
+ .top .shell{
+  flex-direction:row;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  padding:15px 0;
+  min-height:75px;
+ }
+ .desktop-nav{display:none}
+ .mobile-nav{display:block;position:static;flex:none}
+ .mobile-nav summary{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:13px;
+  min-height:45px;
+  min-width:92px;
+  padding:11px 13px;
+  border:1px solid var(--line);
+  border-radius:2px 9px 2px 5px;
+  list-style:none;
+  cursor:pointer;
+  color:var(--ink);
+  background:rgba(252,249,241,.58);
+  font:500 11px/1.2 var(--mono);
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  -webkit-tap-highlight-color:transparent;
+ }
+ .mobile-nav summary::-webkit-details-marker{display:none}
+ .mobile-nav summary::after{
+  content:"";
+  display:block;
+  width:15px;
+  height:11px;
+  flex:none;
+  border-top:1px solid currentColor;
+  border-bottom:1px solid currentColor;
+  background:linear-gradient(currentColor,currentColor) center/100% 1px no-repeat;
+  opacity:.8;
+ }
+ .mobile-nav[open] summary{background:var(--white)}
+ .mobile-nav[open] summary::after{background:none;height:1px;border-bottom:0}
+ .mobile-nav nav{
+  position:absolute;
+  top:100%;
+  left:0;
+  right:0;
+  z-index:10;
+  display:flex;
+  flex-direction:column;
+  flex-wrap:nowrap;
+  align-items:stretch;
+  gap:0;
+  padding:7px max(21px,calc((100vw - 1190px)/2)) 19px;
+  background:var(--paper);
+  border-bottom:1px solid var(--line);
+  box-shadow:0 14px 17px -17px rgba(28,48,42,.3);
+ }
+ .mobile-nav nav a{
+  display:flex;
+  align-items:center;
+  min-height:47px;
+  font:500 12px/1.3 var(--body);
+  letter-spacing:.035em;
+  text-transform:none;
+  border-bottom:1px solid rgba(211,201,183,.6);
+ }
+ .mobile-nav nav a[aria-current="page"]{color:#84652b}
+ .mobile-nav summary:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+}
+@media(max-width:600px){
+ .inline-link{min-height:44px;align-items:center}
+ footer .footlinks a{display:inline-flex;align-items:center;min-height:36px}
+}
